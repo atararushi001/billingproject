@@ -46,8 +46,12 @@ echo $num_result =   $boxresult->num_rows;
   $notused = 0;
 }
 ?>
+<div style="width: 90%; text-align:center; margin: auto; color:#3d909b;">
+<h1>Add Packing list</h1>
+</div>
 <div class="" style="width: 90%; margin: auto;">
-            <form action="function.php" name="basicdata" method="post" enctype="multipart/form-data">
+
+<form action="function.php" name="basicdata" method="post" enctype="multipart/form-data">
               <fieldset>
                 <legend>EXPORTER</legend>
                 <div class="form-row">
@@ -173,8 +177,8 @@ echo $num_result =   $boxresult->num_rows;
                     <input type="text" class="form-control" id="inputCity" placeholder="Other Refereance" value="<?php echo isset($row1['pack_refereance']) ? $row1['pack_refereance'] : null;   ?>" name="pack_refereance"  required>
                   </div>
                   <div class="form-group  col-md-6">
-                    <label for="inputZip">BUYER'S (IF OTHER THAN CONSIGNEE )</label>
-                    <input type="text" class="form-control" id="inputZip" placeholder="Delievry" value="<?php echo isset($row1['pack_BUYER']) ? $row1['pack_BUYER'] : null;   ?>" name="pack_BUYER"  required>
+                    <label for="inputZip">Notify Party</label>
+                    <input type="text" class="form-control" id="inputZip" placeholder="Notify Party" value="<?php echo isset($row1['pack_BUYER']) ? $row1['pack_BUYER'] : null;   ?>" name="pack_BUYER"  required>
                   </div>
                   <div class="form-group  col-md-6">
                     <label for="inputZip">Pre -Carriage by</label>
@@ -289,7 +293,7 @@ echo $num_result =   $boxresult->num_rows;
 
               <button type="button" class="btn btn-warning mb-5" id="addbox">add box </button>
               <button type="button" class="btn btn-danger mb-5" id="removebox">remove box </button>
-              <button type="submit" class="btn  btn-dark mb-5" name="<?php echo isset($_GET['editid'])? "edit" : "add"  ?>"><?php echo isset($_GET['editid'])? "Edit" : "Add"  ?></button>
+              <button type="submit" class="btn  btn-dark mb-5" name="<?php echo isset($_GET['editid'])? "edit" : "add"  ?>"><?php echo isset($_GET['editid'])? "Edit" : "Save and preview"  ?></button>
 
               
 </div>

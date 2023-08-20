@@ -49,7 +49,7 @@ include 'db.php';
             <tr>
                 <td><?php echo $countpart; ?></td>
                 <td><?php echo $row['pack_packing_list_no']; ?></td>
-                <td><?php echo $row['pack_BUYER']; ?></td>
+                <td><?php echo $row['pack_buyer_order_no']; ?></td>
                   <td><?php echo $row['bill_name']; ?></td>
                 <td><?php echo $row['pack_date']; ?></td>
                 <td><?php echo $row['pack_po_date']; ?></td>

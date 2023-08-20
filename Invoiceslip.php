@@ -147,7 +147,7 @@ if (isset($_GET['id'])) {
                         <th  colspan="6" style="width:500px;" class="boldwork">EXPORTER :</th>
                         <th class="boldwork"  colspan="1">invoice number</th>
                         <th colspan="5" ><?php echo $row1['inc_invoice_nu']; ?>asdadas</th>
-                        <th class="boldwork" colspan="1">Date</th>
+                        <th class="boldwork" colspan="1">Invoice Date</th>
                         <th colspan="1"><?php echo $row1['inc_date']; ?></th>
                     </tr>
 
@@ -162,7 +162,7 @@ if (isset($_GET['id'])) {
                             <?php echo $row1['exporter_district']; ?>
                             <b class="boldwork">  State:</b>
                             <?php echo $row1['exporter_state']; ?>
-                            <b class="boldwork">  country:</b>
+                            <b class="boldwork">  Country:</b>
                             <?php echo $row1['exporter_country']; ?>
                             <br />
                             <b class="boldwork">  M:</b>
@@ -280,7 +280,11 @@ if (isset($_GET['id'])) {
                     <tr>
                         <td colspan="2"><p class="boldwork"><p class="boldwork"> Ship via / Mode of Transport</p> </td>
                         <td colspan="8"><p class="boldwork"><p class="boldwork"> Port of Loading  </p></td>
-                        <td colspan="4" rowspan="4"> <p class="boldwork"> Terms of Delievry </p> <br />DELIEVRY: <?php echo $row1['inc_term_of_delievry']; ?></td>
+                        <td colspan="4" rowspan="4"> <b class="boldwork"> Terms of Delievry : </b> <?php echo $row1['inc_term_of_delievry']; ?><br>
+                        <b class="boldwork">  Terms of Payment : </b><?php echo $row1['pack_term_of_Payment']; ?>
+                        <br>
+                        <b class="boldwork">  Currency : </b><?php echo $row1['inc_currency']; ?>
+                    </td>
                     </tr>
                     <tr>
                         <td colspan="2"><?php echo $row1['inc_vessel']; ?></td>
@@ -294,6 +298,9 @@ if (isset($_GET['id'])) {
                     <tr>
                         <td colspan="2"> <?php echo $row1['inc_descharge']; ?></td>
                         <td colspan="8"><?php echo $row1['inc_destination']; ?></td>
+                        <!-- <td colspan="1"><b class="boldwork"> Currency </b> </td>
+                        <td colspan="2"><?php echo $row1['inc_currency']; ?></b> </td>
+                        <td colspan="4">&nbsp; </td> -->
                     </tr>
                     <tr>
                         <td  colspan="14">
@@ -346,9 +353,10 @@ if (isset($_GET['id'])) {
                         $count++;
                       
                      } 
-                     $cgst =  $row1['inc_cgst']!= 0 ? (($totalamount + $row1['inc_other_charges']) *$row1['inc_cgst'])/100 : "0" ;
-                     $sgst =  $row1['inc_sgst']!= 0 ? (($totalamount + $row1['inc_other_charges']) *$row1['inc_sgst'])/100 : "0" ;
-                     $igst =  $row1['inc_igst']!= 0 ? (($totalamount + $row1['inc_other_charges']) *$row1['inc_igst'])/100 : "0" ;?>
+                     $cgst = 0; $sgst = 0;  $igst = 0;
+                     $cgst =  $row1['inc_cgst']!= 0 ? (($totalamount + $row1['inc_other_charges']) * $row1['inc_cgst'])/100 : "0" ;
+                     $sgst =  $row1['inc_sgst']!= 0 ? (($totalamount + $row1['inc_other_charges']) * $row1['inc_sgst'])/100 : "0" ;
+                     $igst =  $row1['inc_igst']!= 0 ? (($totalamount + $row1['inc_other_charges']) * $row1['inc_igst'])/100 : "0" ;?>
 
                  
 
@@ -364,26 +372,26 @@ if (isset($_GET['id'])) {
                     </tr>
                     <tr>
                         <td colspan="12"><b class="boldwork">&nbsp;</b></td>
-                        <td><b class="boldwork">Other Charges </b></td>
+                        <td><b class="boldwork">Packing and Forwarding charges </b></td>
                         <td><?php echo $row1['inc_other_charges']; ?></td>
                     </tr>
                     <tr> 
                     <tr style="text-align: left; ">
                         <td colspan="8"> <b class="boldwork">IEC Code No. </b><?php echo $row1['inc_iec_code_no']; ?></td>
                         <td colspan="4">  <b class="boldwork">Net Weight:</b> <?php echo $totalNetWeight; ?> kg Approx</td>
-                        <td><b class="boldwork">CGST on Sales @ 9% </b></td>
+                        <td><b class="boldwork">CGST on Sales @ <?php echo  $row1['inc_cgst']; ?>%:</b></td>
                         <td><?php echo $cgst;  ?></td>
                     </tr>   
                     <tr style="text-align: left; ">
                         <td colspan="8"> <b class="boldwork">GST NO :</b> <?php echo $row1['inc_gst_no']; ?></td>
                         <td colspan="4">  <b class="boldwork">Total Amount :</b><?php echo $totalamount; ?>kg Approx</td>
-                        <td><b class="boldwork">SGST on Sales @ 9% :</b></td>
+                        <td><b class="boldwork">SGST on Sales @<?php echo  $row1['inc_sgst']; ?>%:</b></td>
                         <td><?php echo $sgst;  ?></td>
                     </tr>   
                     <tr style="text-align: left; ">
                         <td colspan="8">  <b class="boldwork">LUT(ARN) No:</b> <?php echo $row1['inc_lut_no']; ?></td>
-                        <td colspan="4">   <b class="boldwork">Nos. & Kind of Pack:</b> <?php echo $totalNetWeight; ?><br /></td>
-                        <td><b class="boldwork">IGST on Sales @ 18% </b></td>
+                        <td colspan="4">   <b class="boldwork">Nos. & Kind of Pack:</b> <?php echo $row1['inc_total_boxs']; ?><br /></td>
+                        <td><b class="boldwork">IGST on Sales @<?php echo  $row1['inc_igst']; ?>%:</b></td>
                         <td><?php echo $igst;  ?></td>
                     </tr>  
                  

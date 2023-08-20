@@ -564,7 +564,7 @@ include 'db.php';
         count++;
       });
       $("#removebox").click(function() {
-        if(count>1){
+        if(count>=1){
         console.log(count);
         $(".fildset"+(count-1)).remove();
         count--;

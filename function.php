@@ -29,7 +29,6 @@ if (isset($_POST['add'])) {
     $exporter_country = $_POST['exporter_country'];
     $exporter_mobile = $_POST['exporter_mobile'];
     $exporter_email = $_POST['exporter_email'];
-    $exporter_country = $_POST['exporter_country'];
 
     $bill_name = $_POST['bill_name'];
     $bill_address = $_POST['bill_address'];
@@ -38,6 +37,7 @@ if (isset($_POST['add'])) {
     $bill_country = $_POST['bill_country'];
     $bill_mobile = $_POST['bill_mobile'];
     $bill_fax = $_POST['bill_fax'];
+    $pack_total_boxs = $_POST['pack_total_boxs'];
 
 
     $ship_name = $_POST['ship_name'];
@@ -131,12 +131,11 @@ if (isset($_POST['addinvoce'])) {
      $exporter_name = $_POST['exporter_name'];
      $exporter_address = $_POST['exporter_address'];
      $exporter_district = $_POST['exporter_district'];
-     // $exporter_state = $_POST['exporter_state'];
-     $exporter_state = "sad";
+     $exporter_state = $_POST['exporter_state'];
+    //  $exporter_state = "sad";
      $exporter_country = $_POST['exporter_country'];
      $exporter_mobile = $_POST['exporter_mobile'];
      $exporter_email = $_POST['exporter_email'];
-     $exporter_country = $_POST['exporter_country'];
  
      $bill_name = $_POST['bill_name'];
      $bill_address = $_POST['bill_address'];
@@ -158,7 +157,7 @@ if (isset($_POST['addinvoce'])) {
      $inc_gst_no = $_POST['inc_gst_no'];
      $inc_lut_no = $_POST['inc_lut_no'];
      $inc_other_charges = $_POST['inc_other_charges'];
-     
+     $inc_Discount = $_POST['inc_Discount'];
    $num_product = $_POST['addinvoce'];
 
 
@@ -204,7 +203,7 @@ if (isset($_POST['addinvoce'])) {
             $conn->query($sql2);   
             }
              }
-             header("Location:index.php?view=Invoceslip&id=".$inc_id); 
+             header("Location:index.php?view=Invoiceslip&id=".$inc_id); 
           
          }
          if (isset($_POST['login'])) { 

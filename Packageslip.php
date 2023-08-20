@@ -103,8 +103,8 @@ if (isset($_GET['id'])) {
                     <tr>
                         <th  colspan="6" style="width:500px;" class="boldwork">EXPORTER :</th>
                         <th class="boldwork"  colspan="1">PACKING LIST NO.</th>
-                        <th colspan="5" ><?php echo $row1['pack_packing_list_no']; ?>asdadas</th>
-                        <th class="boldwork" colspan="1">Date</th>
+                        <th colspan="5" ><?php echo $row1['pack_packing_list_no']; ?></th>
+                        <th class="boldwork" colspan="1">Package date</th>
                         <th colspan="1"><?php echo $row1['pack_date']; ?></th>
                     </tr>
 
@@ -116,12 +116,12 @@ if (isset($_GET['id'])) {
                             <?php echo $row1['exporter_address']; ?>
                             <br />
                             <b class="boldwork"> 
-                            dist:
+                            Dist:
                             </b>
                             <?php echo $row1['exporter_district']; ?>
                             <b class="boldwork">State:</b>
                             <?php echo $row1['exporter_state']; ?>
-                            <b class="boldwork">country:</b>
+                            <b class="boldwork">Country:</b>
                             <?php echo $row1['exporter_country']; ?>
                             <br />
                             <b class="boldwork"> M:</b>
@@ -136,7 +136,7 @@ if (isset($_GET['id'])) {
                     <tr>
                         <th class="boldwork" colspan="1" style="width: 15%;">BUYER'S ORDER NO</th>
                         <th colspan="5" ><?php echo $row1['pack_buyer_order_no']; ?></th>
-                        <th colspan="1" class="boldwork">Date</th>
+                        <th colspan="1" class="boldwork">Po Date</th>
                         <th  colspan="1"><?php echo $row1['pack_po_date']; ?></th>
 
                     </tr>
@@ -180,7 +180,7 @@ if (isset($_GET['id'])) {
                             <?php echo $row1['bill_district']; ?>
                             <b class="boldwork"> State:</b>
                             <?php echo $row1['bill_state']; ?>
-                            <b class="boldwork"> country:</b>
+                            <b class="boldwork"> Country:</b>
                             <?php echo $row1['bill_country']; ?>
                             <br />
                             <b class="boldwork">Tel:</b>
@@ -196,7 +196,7 @@ if (isset($_GET['id'])) {
 
                             <?php echo $row1['ship_address']; ?>
                             <br />
-                            <b class="boldwork"> Dist:<b class="boldwork">
+                            <b class="boldwork"> Dist:</b>
                             <?php echo $row1['ship_district']; ?>
                             <b class="boldwork"> State:</b>
                             <?php echo $row1['ship_state']; ?>
@@ -266,7 +266,7 @@ if (isset($_GET['id'])) {
                      
                         <td class="boldwork">Net Weight(kg)</td>
                         <td class="boldwork">Gross Weight(kg)</td>
-                        <td class="boldwork" colspan="2"> Dimension OF Boxes (LXBXH) </td>
+                        <td class="boldwork" colspan="2"> Dimension OF Boxes (LXBXH)(Inch)</td>
                     </tr>
 <?php
                     $result = $conn->query($sql);
@@ -311,12 +311,12 @@ if (isset($_GET['id'])) {
                     <td   >&nbsp;</td>
                     </tr>
                     <tr> 
-                    <td colspan="6" style="text-align: left; ">
+                    <td colspan="9" style="text-align: left; ">
                     <b class="boldwork">IEC Code No. </b><?php echo $row1['pack_iec_code_no']; ?><br />
                     <b class="boldwork">GST NO :</b> <?php echo $row1['pack_gst_no']; ?><br />
                     <b class="boldwork">LUT(ARN) No:</b> <?php echo $row1['pack_lut_no']; ?>
                     </td>
-                    <td colspan="14"  style="text-align: left; ">
+                    <td colspan="10"  style="text-align: left; ">
                     <b class="boldwork">Net Weight:</b> <?php echo $totalNetWeight; ?> kg Approx<br />
                     <b class="boldwork">Gross Weight:</b><?php echo $totalgrossweight; ?>kg Approx<br />
                     <b class="boldwork">Nos. & Kind of Pack:</b> <?php echo $row1['pack_total_boxs']; ?><br /></td>
